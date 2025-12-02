@@ -4,12 +4,16 @@
 
 // For Loop
 for(var i =0 ; i < 5; i++) {
-    console.log(i, "Bharath")
+    if(i==2) 
+        continue
+    console.log((i+1), "Bharath")   
 } 
 
 // while loop 
 var j = 0
 while(j < 10) {
+    if(j ==1 ) 
+        break
     console.log(j)
     j++
 }
@@ -18,6 +22,8 @@ while(j < 10) {
 /// do while loop : Runs atleast once even if the condition is failed
 var k = 15
 do {
+    if (k = 15) 
+        break
     console.log("Ayyappa")
     k++;
 } while (k < 1);
