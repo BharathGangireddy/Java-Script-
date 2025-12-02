@@ -1,0 +1,35 @@
+let a = [1,2,2,4]
+let b = [10,11,13,18]
+let c = [...a , ...b] /// Spread Operator
+console.log(c)
+
+personDetails =  {
+    name : "Bharath", 
+    age : 25
+
+}
+
+FullName = {                     
+    surName : "Gangireddy",
+    ...personDetails,
+    age : 35
+}
+
+console.log(FullName)
+
+
+
+
+dog_details = {
+    name_a : "Leo",
+    ...FullName,
+    age : 25,
+    
+}
+console.log(dog_details)
+
+
+
+const {name_a , age } = dog_details
+console.log(name_a) // undefined
+
