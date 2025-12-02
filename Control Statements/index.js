@@ -34,3 +34,27 @@ switch(x) {
     default  :
     console.log("not Divisible by any number")
 }
+
+// Program 
+
+var Customer  = 'Silver'
+
+if(Customer === 'gold') {
+    console.log("Gold Customer")
+
+}else if(Customer === 'Silver') {   
+    console.log('Silver Customer')
+}else 'unknown customer'
+
+switch(Customer) {
+    case 'silver' : //  not satisfies because its also checks case senstive 
+        console.log('Silver')
+    break 
+
+    case 'gold' :
+        console.log('Gold Customer')
+        break
+ 
+        default :
+        console.log('unknown Customer');
+    }
