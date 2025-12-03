@@ -5,7 +5,7 @@
 // For Loop
 for(var i =0 ; i < 5; i++) {
     if(i==2) 
-        continue
+        continue     // It will not print the (i==2) condition it skips the steps 
     console.log((i+1), "Bharath")   
 } 
 
@@ -23,10 +23,10 @@ while(j < 10) {
 var k = 15
 do {
     if (k = 15) 
-        break
+        break // --> It breaks the step when the k value meets the condition
     console.log("Ayyappa")
     k++;
-} while (k < 1);
+} while (k < 1)
 
 /// INfinite Loops :: 
 
@@ -35,3 +35,4 @@ do {
 }
     */
 
+// <script src = './ConditionalLoops.js' ></script>
