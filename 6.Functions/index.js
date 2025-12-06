@@ -467,3 +467,37 @@ function fact(i) {
 }
 
 console.log(fact(5))
+
+/* A function that converts a function taking multiple arguments 
+   into a sequence of functions each taking one argument is known as currying. 
+    1. Reduces argument repetition
+    2. Helps create reusable, specialized functions
+   
+*/
+
+console.log("!232435346")
+// ES5
+function add(a) {
+    return function(b) {
+        return function(c) {
+            console.log(a+b+c)
+        }
+    }
+
+}
+add(10)(10)(10) 
+
+// Function currying in Arrow function 
+
+var k2 = a=>b=>c=> console.log(a+b+c)
+k2(10)(20)(30)
+
+
+/// 
+
+var arrow_fun_Curryying = a=>b => {
+    console.log(a -(a*b))
+}
+
+arrow_fun_Curryying(1000) (0.45)
+arrow_fun_Curryying(2000) (0.45)
