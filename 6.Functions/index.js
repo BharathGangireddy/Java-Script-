@@ -67,6 +67,13 @@ var z = function sum(x,y) { //(3,2)
     console.log(x+y)
 }
 
+var fe = function sum_a(...numbers) {
+    console.log(numbers+= numbers)
+}
+sum_a(1,2,3,4,5,6,7) // Variable length arguments (* args used)
+ 
+
+
 sum(y=2,x=3) // keyword arguments no order needed 
 
 ////////////////////////////////////////////////////////////
@@ -501,3 +508,9 @@ var arrow_fun_Curryying = a=>b => {
 
 arrow_fun_Curryying(1000) (0.45)
 arrow_fun_Curryying(2000) (0.45)
+
+
+var fe = function sum_a(...numbers) {
+    console.log(numbers+= numbers)
+}
+sum_a(1,2,3,4,5,6,7)

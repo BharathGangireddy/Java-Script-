@@ -8,6 +8,11 @@
     --> Homogenous (same data type)         --> general use case
     --> Hetrogenous(different Data type )
 
+    --->...rest parameter :: It packs values into array
+            ES6 version
+            rest parameter should be the last parameter 
+            It starts with ... dots
+
 */
 /// Array literal Syntax
 var array = [12, 13, 14, 15, 16]  
@@ -120,3 +125,11 @@ var a_name ="Bharath"
 
 var com_arr = [...a1,...a3,...a2,...a_name]
 console.log(com_arr)
+
+
+console.log(typeof null)
+
+function k(...numbers) {
+    console.log(numbers += numbers)
+}
+k(1,2,3,4,5,6,7)
