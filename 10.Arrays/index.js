@@ -14,6 +14,10 @@
             It starts with ... dots
 
 */
+
+
+
+
 /// Array literal Syntax
 var array = [12, 13, 14, 15, 16]  
 console.log(array) 
@@ -397,3 +401,148 @@ var r = g.reduce((cum,item) => {
     console.log(cum , item)
     return cum+item
 },0)
+
+
+/* How to remove duplicates of An Array 
+    1.set with spread Operator
+    2.indexOf()
+*/ 
+var i = [1,2,3,4,4,5,5]
+console.log(i)
+var j = [...new Set(i)]
+console.log(j)
+
+console.log("123424")   
+
+    var uniqueArray = [ ]
+
+    var removeduplicates = (array) => {
+        for(var eachValue of array) {
+            if(uniqueArray.indexOf(eachValue) === -1) {
+                uniqueArray.push(eachValue)
+            }
+        }
+    }
+    removeduplicates(i)
+    console.log(uniqueArray)
+
+
+/* How to flatten Array : 
+    how to convert multidimensional array into single
+
+    1.flat() method --> ES11  (n-1)
+    2.Array.isArray() --> check wheather its array or not
+    */
+
+var sd = [1,3]
+var twod = [1,2,[3,4], [5,6]] // 2 dimensional Array
+var threed = [1,2,[3,4, [7,8]], [5,6]] // 3 dimensional Array
+console.log(threed.flat(Infinity))
+
+var flattenArray = [ ]
+
+function flattenFunction(threed) {
+    for(var k of threed) {
+        console.log(k)
+        if(Array.isArray(k)) {
+            flattenFunction(k) // recursive function
+        }else 
+            flattenArray.push(k)
+    }
+
+}
+
+flattenFunction(threed)
+console.log(flattenArray)
+
+
+
+/// map vs for each
+
+/* 
+    map:
+    1.Loops each value
+    2.each value is changed according to condition
+    3.Return as array
+*/
+var kk = [1,2,4,5,5,6]
+
+var arr_map = kk.map((eachValue) => {
+    return eachValue ** 2 
+}) 
+console.log(arr_map)
+
+
+
+// forEach
+
+/*
+    1.loops each value
+    2.modifies each value by given conditions
+    3.returns Undefined
+ */
+
+var kk11 = []
+kk.forEach((item) => {
+    var n =item ** 2 // if we return it gives undefined
+    kk11.push(n)
+})
+console.log(kk11)
+
+
+
+
+// Sorting on String
+
+var names_array = ["Scachin" , "Virat" , "Rohit"]
+// ASC
+var asc = names_array.sort()
+console.log(asc) 
+console.log(names_array)
+
+//DSC 
+console.log(asc.reverse())
+
+//Sorting on Numbers(single) 
+
+var h1 = [3,1,7,9,9,2]
+var asc_h1 = h1.sort()
+var dsc_h1 = h1.reverse()
+console.log(dsc_h1)
+console.log(asc_h1)
+
+
+//Sorting on Numbers(Double or >>) 
+var h2 = [3,17,7,99,9,29]
+var k33 = h2.sort((a,b)=> {
+    // return b-a gives descending order Values
+    return a-b // gives Ascending Order values
+ })
+
+console.log(k33)
+
+
+var ob_arr = [{name : "Bharath" }, {name : "Raju"} , {name : "DJ Tillu"}]
+
+var s = ob_arr.sort((a,b) => {
+    if(a.name > b.name) return 1
+    if(a.name < b.name) return -1
+})
+console.log(s) 
+
+
+/// Nested Loop 
+var nestedLoop = [3,17,7,99,9,29]
+
+for( i = 0 ; i< nestedLoop.length ; i++) {  //  
+    for( j = i+1 ; j< nestedLoop.length ; j++) {
+     if (nestedLoop[i] <  nestedLoop[j])  {
+        var temp = nestedLoop[i]
+        nestedLoop[i] =  nestedLoop[j]
+        nestedLoop[j] = temp
+     }
+    }
+}
+console.log(nestedLoop)
+
+
