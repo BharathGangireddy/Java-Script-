@@ -391,7 +391,6 @@ console.log(t)
     It takes two arguments
 */
 
-
 var g = [1,2,3,4,5]
 
 var r = g.reduce((cum,item) => {
