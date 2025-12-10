@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        height:  500px;
+        width : 500px;
+        background-color: lightgrey;
+        text-align: center;
+        align-items: center;
+        margin :auto
+    }
+</style>
+<body>
+
+    <div onclick='showCounts()'>
+        <h2 id = 'n'> Normal Event : 0</h2>
+        <h2 id = 't'> Throttle Event:0</h2>
+        <h2 id = 'de'> Debounce Event : 0</h2>
+    </div>
+
+    <script type="text/javascript" >
+        let n = document.getElementById('n');
+        let t = document.getElementById('t');
+        let de = document.getElementById('de');
+        
+        let normalCount = 0;
+        let throttleCount = 0;
+        let debounceCount = 0;
+        let fireThrottle = true ;
+        let dTimer;
+
+        showCounts = () => {
+           normalCountfunction();
+           throttle_Countfunction();
+            debounceCountfunction();
+           
+        }
+        normalCountfunction = () => {
+           normalCount++;  
+           n.textContent = `Normal Event: ${normalCount}`
+        }   
+        throttle_Countfunction = () => {
+            if(fireThrottle === true) {
+                throttleCount++;
+                t.textContent = `throttle Count :  ${throttleCount}`
+                fireThrottle = false
+           setTimeout(()=> fireThrottle = true , 2000)
+            }
+        } 
+        
+        debounceCountfunction = () => {  
+          
+            window.clearInterval(dTimer)
+            dTimer = window.setTimeout(()=> {
+                debounceCount++;
+                de.textContent = `debounce Count : ${debounceCount}`
+            },2000)
+
+        }
+        
+
+
+
+
+        
+    </script>
+    
+</body>
+</html>
