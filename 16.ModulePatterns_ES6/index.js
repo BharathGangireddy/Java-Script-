@@ -1,5 +1,5 @@
 //import x from './sample.js'
-import {x} from './sample.js'
+import {x , add} from './sample.js'
    /* Module Patterns are advanced version of IIFE's
 
     --> It is used to create modules in JavaScript.
@@ -12,3 +12,4 @@ import {x} from './sample.js'
     var c = () => {
         console.log("Hello from module pattern"); }
     console.log(a + b + x);
+    console.log(add(1343, 25));
