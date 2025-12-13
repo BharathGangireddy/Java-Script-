@@ -141,9 +141,6 @@ deleteItem=(id) => {
 
 deleteDataBtn.addEventListener('click' ,()=> deleteItem(101))
 
-
-
-
 /* 
     
 //// API Calls 
