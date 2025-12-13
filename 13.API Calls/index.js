@@ -119,6 +119,7 @@ var updateData = () => {
 
 }
 
+
 updateDataBtn.addEventListener('click' , updateData)
 
 deleteItem=(id) => {
@@ -143,6 +144,75 @@ deleteDataBtn.addEventListener('click' ,()=> deleteItem(101))
 
 
 
+/* 
+    
+//// API Calls 
+/* console.log(fetch('https://jsonplaceholder.typicode.com/posts'))
+    --> gives promise Objet
+let li_element = document.getElementById('liEle')
+
+var getData_api = () => {
+fetch('https://jsonplaceholder.typicode.com/posts') // fetch is used for API calls
+.then((response) => {
+    //console.log(response) // gives response object 
+   return response.json() // converting response to json format which also returns promise and
+   // which is unreadable format
+}).then((data) => { // this then waits until it gets data 
+        let api_data =  data // / gives actual data from response in json format
+        api_data.forEach((item) => {  
+        
+        let each_li_ele =  document.createElement('li');
+        each_li_ele.textContent =  `Title :  ${item.title}`
+
+        let p1 = document.createElement('p')
+        each_li_ele.appendChild(p1)
+        p1.textContent = `Body : ${item.body}`
+        each_li_ele.appendChild(p1)
+
+        li_element.appendChild(each_li_ele)
+    })
+})
+}
+
+let get_btn_ele = document.getElementById('get_btn')
+get_btn_ele.addEventListener('click', getData_api)
+
+
+let updateData_obj = [
+    {
+    "userId": 1,
+    "title": "SALAAR",
+    "body": "Stress Buster"
+   },
+   {
+    "userId": 2,
+    "title": "SALAAR The Fighter",
+    "body": "Stress Buster"
+   }
+
+]
+var updateData_api = () => {
+    let id = [3,4]
+    id.forEach((id,index) => {
+         fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+
+            method : 'PUT',
+            headers : { 
+                'Content-type' : 'application/json'
+            },
+            body : JSON.stringify(updateData_obj[index])
+
+        }).then((response) => response.json())
+           .then((data) => console.log(data)) // returns data but it does not gets updated
+    
+    })
+    } 
+    
+
+let update_btn_ele = document.getElementById('update_btn')
+update_btn_ele.addEventListener('click' , updateData_api) 
+
+*/
 
 
 

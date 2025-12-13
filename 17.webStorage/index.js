@@ -90,3 +90,31 @@ clear_session_function = () =>sessionStorage.clear(); // clears Every session st
 set_SessionItem.addEventListener('click' , s_set_SessionItem);
 get_SessionItem.addEventListener('click' , s_get_SessionItem);
 clear_SessionAll.addEventListener('click' , clear_session_function)
+
+
+/// Practice 
+
+/// 
+/* let getButton  = document.getElementById('get_btn')
+let localStorage_Customer_Details = {
+
+    name_1 : "Bharath" ,
+    name_2 : "SaiRam",
+    name_3  : "Vasanth"
+}
+
+for(var i in localStorage_Customer_Details)
+ {
+   localStorage.setItem(i,localStorage_Customer_Details[i])
+ }
+
+var getLocalStorage = () => {
+    Object.keys(localStorage).forEach((item)=> {
+    console.log(localStorage[item]) // It is dynamic so we used [] 
+})
+
+}
+getButton.addEventListener('click' , getLocalStorage)
+
+console.log(localStorage_Customer_Details)
+ */
