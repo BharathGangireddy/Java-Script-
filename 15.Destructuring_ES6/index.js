@@ -40,3 +40,17 @@ console.log(a)
 console.log(b)
 console.log(name)
 console.log(c1)
+
+
+
+
+var p_details = {
+     name_p : "Bharath" ,
+     age_p : 24,
+     Address : {village : "NRP" , roadNo : "DJ main road"},
+     scores : [20,30,40]
+}
+
+const {name_p , age_p ,  Address : {village ,roadNo} ,  scores : [a1,a2,a3]} = p_details;
+
+console.log(Address.roadNo);

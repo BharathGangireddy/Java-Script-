@@ -18,7 +18,6 @@ Test()
     Regular function  : direct member  
 */ 
 
-
 let person = {
     name : "Bharath" ,
     age : 24 ,  
@@ -67,7 +66,9 @@ person.outer_4()
 
         WE CANNOT CREATE CONSTRUCTOR FUNCTIONS USING ARROW FUNCTIONS
 */
-console.log("345486485875687658")
+console.log("345486485875687658");
+
+
 function animal(name , age , sound) {
         this.name= name , 
         this.age = age ,
@@ -184,3 +185,41 @@ test_11.call(change_reference , 10,20,30)
  */ 
 test_11.apply(change_reference, [10,20,30]) 
 test_11.bind(change_reference,10,20,30)() // we have call once more to give referece object
+
+
+
+
+//////////////////////////////////////////////
+
+
+
+
+// PRACTICE SET
+
+
+// IN CLASS object THE INDIRECT MEMBER THIS REFERS TO UNDEFINED 
+
+class person_P {
+    constructor(name , age) {
+        this.name = name;
+        this.age = age;
+        this.play = function x (){
+            console.log(this); // direct member this refers to current Object // person Object 
+        };
+        this.outer = function y() {
+            console.log(this);   // (1)
+            var h = function z(a1,a2) {
+                console.log(this); // (2)
+                console.log(a1+a2);            };
+          //h.call(this, 10,20); // assigns this to current Object.
+           // h.apply(this , [10,22]); apply accepts only two arguments.
+            h.bind(this , 20,1000)();  // bind should be called one more time to change reference.
+        };
+
+    }
+    
+}
+
+let p1 = new person_P("Bharath" , 25);
+let c = p1.outer();
+c;

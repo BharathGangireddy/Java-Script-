@@ -67,7 +67,7 @@ var z = function sum(x,y) { //(3,2)
     console.log(x+y)
 }
 
-var fe = function sum_a(...numbers) {
+function sum_a(...numbers) {
     console.log(numbers+= numbers)
 }
 sum_a(1,2,3,4,5,6,7) // Variable length arguments (* args used)
